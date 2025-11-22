@@ -1,8 +1,7 @@
 class Television:
     """
-
+    the class for the tv as well as the variables that allow the volume and channel to keep a value and the set values it needs.
     """
-
     MIN_VOLUME: int = 0
     MAX_VOLUME: int = 2
     MIN_CHANNEL: int = 0
