@@ -23,3 +23,37 @@ class Television:
                 self._volume = 0
             else:
                 self._volume = self._previous_volume # restores the volume that was remembered
+
+    def channel_up(self):
+        if self._status:
+            if self._channel == self.MAX_CHANNEL:  #checks the status of the channel for it at max
+                self._channel = self.MIN_CHANNEL   # and min
+            else:
+                self._channel += 1       # increases the channel number by 1
+
+    def channel_down(self):
+        if self._status:
+            if self._channel == self.MIN_CHANNEL:   # checks the channel if at min
+                self._channel = self.MAX_CHANNEL    # and max
+            else:
+                self._channel -= 1                 # decreases the channel by 1 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
