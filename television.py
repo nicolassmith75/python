@@ -36,13 +36,29 @@ class Television:
             if self._channel == self.MIN_CHANNEL:   # checks the channel if at min
                 self._channel = self.MAX_CHANNEL    # and max
             else:
-                self._channel -= 1                 # decreases the channel by 1 
+                self._channel -= 1                 # decreases the channel by 1
 
+    def volume_up(self):
+        if self._status:
+            if self._muted:
+                self._muted = False                             # if it is not muted
+                if self._previous_volume < self.MAX_VOLUME:     # adds a volume if the                     self._previous_volume += 1
+                    self._volume = self._previous_volume        # max has not been reached
+            elif self._volume < self.MAX_VOLUME:            # if the current volueme is less than 2 it will add 1 to reach max
+                self._volume += 1
 
+    def volume_down(self):
+        if self._status:
+            if self._muted:
+                self._muted = False                                 # decreases volume by 1
+                if self._previous_volume > self.MIN_VOLUME:         # when volume reaches 0 it will go back to previous volume
+                    self._previous_volume -= 1
+                    self._volume = self._previous_volume
+            elif self._volume > self.MIN_VOLUME:
+                self._volume -= 1
 
-
-
-
+    def __str__(self) -> str:
+        return f"Power = {self._status}, Channel = {self._channel}, Volume = {self._volume}"     # returns the power status, channel number, and volume in the form of a string.
 
 
 
