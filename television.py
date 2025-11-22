@@ -59,13 +59,3 @@ class Television:
 
     def __str__(self):
         return f"Power = {self._status}, Channel = {self._channel}, Volume = {self._volume}"
-
-
-
-
-
-
-
-
-
-
