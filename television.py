@@ -42,9 +42,10 @@ class Television:
         if self._status:
             if self._muted:
                 self._muted = False                             # if it is not muted
-                if self._previous_volume < self.MAX_VOLUME:     # adds a volume if the                     self._previous_volume += 1
+                if self._previous_volume < self.MAX_VOLUME:
+                    self._previous_volume += 1                  # adds a volume if the
                     self._volume = self._previous_volume        # max has not been reached
-            elif self._volume < self.MAX_VOLUME:            # if the current volueme is less than 2 it will add 1 to reach max
+            elif self._volume < self.MAX_VOLUME:            # if the current volume is less than 2 it will add 1 to reach max
                 self._volume += 1
 
     def volume_down(self):
